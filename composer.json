@@ -1,0 +1,51 @@
+{
+  "name": "jardiscore/messaging",
+  "version": "1.0.0",
+  "description": "A powerful, unified PHP messaging library for Redis, Kafka, and RabbitMQ with automatic serialization, consumer groups, and production-ready features",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Jardis Core Development",
+      "email": "jardisCore@headgent.dev"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "ext-redis": "*",
+    "ext-amqp": "*",
+    "ext-rdkafka": "*",
+    "jardispsr/messaging": "1.0.0",
+    "jardiscore/dotenv": "1.0.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.5",
+    "phpstan/phpstan": "^2.0.4",
+    "squizlabs/php_codesniffer": "^3.11.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "JardisCore\\Messaging\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "JardisCore\\Messaging\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "echo '#!/usr/bin/env bash' > .git/hooks/pre-commit",
+      "echo 'bash ./support/pre-commit-hook.sh' >> .git/hooks/pre-commit",
+      "chmod +x .git/hooks/pre-commit"
+    ]
+  },
+  "homepage": "https://github.com/jardiscore/Messaging",
+  "support": {
+    "issues": "https://github.com/jardiscore/Messaging/issues",
+    "email": "jardisCore@headgent.dev"
+  },
+  "keywords": ["messaging", "domain driven design", "jardiscore", "jardis", "headgent"]
+}
